@@ -1,0 +1,13 @@
+<%= form_with(model: @event, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  <%= form.label :location %>
+  <%= form.text_field :location %>
+  <%= form.label :date %>
+  <%= form.datetime_select :date %>
+  <%= form.label :resources, "Upload Event Resources" %>
+  <%= form.file_field :resources, multiple: true %>
+  <%= form.submit %>
+<% end %>
