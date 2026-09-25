@@ -1,0 +1,17 @@
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+.byebug_history
+/config/master.key
+.env
+.DS_Store

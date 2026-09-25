@@ -1,0 +1,26 @@
+<h1><%= @event.name %></h1>
+
+<p><strong>When:</strong> <%= @event.date.strftime("%B %-d, %Y %l:%M %p") %></p>
+<p><strong>Where:</strong> <%= @event.location %></p>
+<p><strong>Organizer:</strong> <%= @event.organizer.name %></p>
+
+<p><%= @event.description %></p>
+
+<% if @event.resources.attached? %>
+  <h3>Resources</h3>
+  <ul>
+    <% @event.resources.each do |resource| %>
+      <li><%= link_to resource.filename, url_for(resource) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if current_user && current_user != @event.organizer %>
+  <% if @event.users.include?(current_user) %>
+    <p>You're signed up for this event.</p>
+  <% else %>
+    <%= button_to "Sign up", event_signups_path(@event), method: :post %>
+  <% end %>
+<% end %>
+
+<p><%= link_to "Back to events", events_path %></p>

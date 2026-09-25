@@ -1,8 +1,19 @@
+source 'https://rubygems.org'
+ruby '3.1.4'
+
 gem 'rails', '~> 6.1.0'
-gem 'pg'
-gem 'puma'
-gem 'devise'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma', '~> 5.0'
+gem 'bcrypt', '~> 3.1.7'
 gem 'active_storage_validations'
-gem 'rspec-rails'
-gem 'rubocop', require: false
-gem 'brakeman', require: false
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'brakeman', require: false
+end
+
+gem "listen", "~> 3.10"
+
+gem "tzinfo-data", "~> 1.2026"

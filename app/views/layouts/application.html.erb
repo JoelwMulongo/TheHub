@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TheHub</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "TheHub", root_path, style: "font-weight: bold; text-decoration: none; color: inherit;" %>
+      <div>
+        <% if current_user %>
+          <%= link_to "New Event", new_event_path %>
+          <span>Signed in as <%= current_user.name %></span>
+          <%= button_to "Log out", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log in", login_path %>
+        <% end %>
+      </div>
+    </nav>
+
+    <% flash.each do |type, message| %>
+      <div class="flash <%= type %>"><%= message %></div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

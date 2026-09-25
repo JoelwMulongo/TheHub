@@ -1,0 +1,13 @@
+<h1>Upcoming Events</h1>
+
+<% if @events.any? %>
+  <% @events.each do |event| %>
+    <div class="event-card">
+      <h2><%= link_to event.name, event %></h2>
+      <p><%= event.date.strftime("%B %-d, %Y %l:%M %p") %> &middot; <%= event.location %></p>
+      <p>Organized by <%= event.organizer.name %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>No events yet. <%= link_to "Create one", new_event_path %>.</p>
+<% end %>

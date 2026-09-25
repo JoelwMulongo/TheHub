@@ -1,0 +1,45 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #1a1a1a;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a, nav button {
+  margin-left: 1rem;
+}
+
+.flash {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.flash.notice { background: #e6f4ea; color: #1e7e34; }
+.flash.alert { background: #fdecea; color: #c0392b; }
+
+.event-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+form label { display: block; margin-top: 0.75rem; font-weight: 600; }
+form input, form textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; }
+form input[type="submit"] { width: auto; margin-top: 1rem; padding: 0.5rem 1.5rem; }

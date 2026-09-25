@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("THE_HUB_DATABASE_USER") { "postgres" } %>
+  password: <%= ENV.fetch("THE_HUB_DATABASE_PASSWORD") { "password" } %>
+  host: <%= ENV.fetch("THE_HUB_DATABASE_HOST") { "localhost" } %>
+
+development:
+  <<: *default
+  database: the_hub_development
+
+test:
+  <<: *default
+  database: the_hub_test
+
+production:
+  <<: *default
+  database: the_hub_production
+  username: <%= ENV["THE_HUB_DATABASE_USER"] %>
+  password: <%= ENV["THE_HUB_DATABASE_PASSWORD"] %>
