@@ -3,8 +3,9 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch("THE_HUB_DATABASE_USER") { "postgres" } %>
-  password: <%= ENV.fetch("THE_HUB_DATABASE_PASSWORD") { "password" } %>
+  password: <%= ENV.fetch("THE_HUB_DATABASE_PASSWORD") %>
   host: <%= ENV.fetch("THE_HUB_DATABASE_HOST") { "localhost" } %>
+  port: 8910
 
 development:
   <<: *default
@@ -19,3 +20,4 @@ production:
   database: the_hub_production
   username: <%= ENV["THE_HUB_DATABASE_USER"] %>
   password: <%= ENV["THE_HUB_DATABASE_PASSWORD"] %>
+

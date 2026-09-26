@@ -15,5 +15,6 @@ group :development, :test do
 end
 
 gem "listen", "~> 3.10"
+gem "json", "~> 2.7"
 
 gem "tzinfo-data", "~> 1.2026"
